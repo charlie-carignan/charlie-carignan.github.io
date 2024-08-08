@@ -5,6 +5,6 @@ layout: page
 ---
 
 <p>University of Illinois at Chicago<br>Department of Biological Sciences<br>840 W. Taylor St.<br>SEL 4093 M/C 067<br>Chicago, IL 60607</p>
-<img src="UICcampus.jpg" style="float:right;width:350px;height:500px">
+<img src="UICcampus.JPG" style="float:right;width:350px;height:500px">
 <p>Email: ccarig2@uic.edu</p>
 
