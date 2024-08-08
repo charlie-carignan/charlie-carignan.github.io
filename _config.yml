@@ -1,6 +1,6 @@
 title: "Charles R. Carignan"
 author: "Charlie Carignan"
-description: "University of Illinois at Chicago" <img src="UIClogo.png" style="float:left;width:75px;height:75px" alt="UIC logo">
+description: <img src="UIClogo.png" style="float:left;width:75px;height:75px" alt="UIC logo"> "University of Illinois at Chicago"
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
