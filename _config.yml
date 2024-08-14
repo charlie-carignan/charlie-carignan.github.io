@@ -1,6 +1,6 @@
 title: "Charles R. Carignan"
 author: "Charlie Carignan"
-description: <img src="https://charlie-carignan.github.io/UIClogo.png" style="position:absolute;up:100px;left:300px;width:90px;height:90px" alt="UIC logo">
+description: <img src="https://charlie-carignan.github.io/UIClogo.png" style="position:absolute;width:90px;height:90px" alt="UIC logo">
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
