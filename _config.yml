@@ -25,6 +25,7 @@ external:                  # shows a footer with social links - for available ic
   - {title: Mail, icon: envelope, url: "mailto:ccarig2@uic.edu", target="_blank"}
   - {title: Github, icon: github, url: "https://github.com/charlie-carignan", target="_blank"}
   - {title: Instagram, icon: "instagram", url: "https://www.instagram.com/charlie_carignan/", target="_blank"}
+  - {title: Facebook, icon: "facebook", url: "https://www.facebook.com/charlie.carignan", target="_blank"}
 
 comments:
 #  disqus_shortname: ""    # see https://disqus.com/
