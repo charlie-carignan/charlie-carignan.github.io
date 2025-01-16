@@ -1,6 +1,6 @@
 
 author: "Charlie Carignan"
-description: <img src="https://charlie-carignan.github.io/UIClogo.png" style="position:relative;width:90px;height:90px" alt="UIC logo">
+description: <img src="https://charlie-carignan.github.io/UIClogo.png" style="position:relative;left:5px;width:90px;height:90px" alt="UIC logo">
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
