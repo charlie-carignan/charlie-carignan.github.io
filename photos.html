@@ -52,12 +52,19 @@ categories: media
             max-width: 90%; /* Increased max width */
             max-height: 90%; /* Increased max height */
             object-fit: contain;
+            pointer-events: none; /* Disable tooltip */
         }
 
-        .caption {
+        .caption-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-top: 15px;
             font-size: 18px; /* Increased font size */
             color: #333;
+        }
+
+        .caption {
             text-align: center;
         }
 
@@ -66,7 +73,6 @@ categories: media
             justify-content: space-between;
             width: 100%;
             margin-top: 20px;
-            position: relative;
         }
 
         #slideshow-controls button {
@@ -77,25 +83,27 @@ categories: media
             color: #333;
             padding: 10px;
             display: inline-block;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        #slideshow-controls #back {
-            left: 0;
-        }
-
-        #slideshow-controls #forward {
-            right: 0;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
         }
 
         #slideshow-controls button:hover {
-            color: #000;
+            background-color: #333; /* Dark background on hover */
+            color: #fff; /* White text when hovered */
         }
 
         #slideshow-controls button:focus {
             outline: none; /* Remove focus outline */
+        }
+
+        /* Additional positioning for the buttons */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        #back {
+            order: -1; /* Places the back button to the left of the caption */
         }
     </style>
 </head>
@@ -104,8 +112,11 @@ categories: media
         <div id="slideshow">
             <!-- Slides dynamically generated -->
         </div>
-        <div id="slideshow-controls">
+        <div id="slideshow-controls" class="button-container">
             <button id="back" aria-label="Previous slide">←</button>
+            <div class="caption-container">
+                <span id="caption" class="caption"></span> <!-- Caption displayed here -->
+            </div>
             <button id="forward" aria-label="Next slide">→</button>
         </div>
     </div>
@@ -140,6 +151,7 @@ categories: media
         ];
 
         const slideshow = document.getElementById("slideshow");
+        const captionElement = document.getElementById("caption");
 
         // Create slides
         media.forEach((item) => {
@@ -150,23 +162,17 @@ categories: media
                 const img = document.createElement("img");
                 img.src = item.src;
                 img.alt = item.title;
-                img.title = item.title;
+                img.title = item.title;  // Tooltip text removed for images
                 slide.appendChild(img);
             } else if (item.type === "video") {
                 const video = document.createElement("video");
                 video.src = item.src;
-                video.title = item.title;
+                video.title = item.title; // Tooltip text removed for videos
                 video.muted = true;
                 video.loop = true;
                 video.autoplay = true;
                 slide.appendChild(video);
             }
-
-            // Add caption
-            const caption = document.createElement("div");
-            caption.classList.add("caption");
-            caption.textContent = item.title;
-            slide.appendChild(caption);
 
             slideshow.appendChild(slide);
         });
@@ -179,6 +185,8 @@ categories: media
             slides.forEach((slide, i) => {
                 slide.classList.toggle("active", i === index);
             });
+            // Update caption for current slide
+            captionElement.textContent = media[index].title;
         }
 
         function nextSlide() {
