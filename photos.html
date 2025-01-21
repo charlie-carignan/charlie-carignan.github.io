@@ -4,6 +4,12 @@ layout: default
 categories: media
 ---
 
+---
+title: "Photos"
+layout: default
+categories: media
+---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +20,12 @@ categories: media
         body {
             margin: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #000;
+            color: #fff;
         }
         #slideshow {
             position: relative;
@@ -42,11 +50,33 @@ categories: media
             height: 100%;
             object-fit: cover;
         }
+        #controls {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
     <div id="slideshow">
         <!-- Slides dynamically generated -->
+    </div>
+    <div id="controls">
+        <button id="back">Back</button>
+        <button id="forward">Forward</button>
     </div>
 
     <script>
@@ -119,9 +149,17 @@ categories: media
             showSlide(currentIndex);
         }
 
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        // Event listeners for buttons
+        document.getElementById("forward").addEventListener("click", nextSlide);
+        document.getElementById("back").addEventListener("click", prevSlide);
+
         // Start the slideshow
         showSlide(currentIndex);
-        setInterval(nextSlide, 5000); // Change slide every 5 seconds
     </script>
 </body>
 </html>
