@@ -66,19 +66,36 @@ categories: media
             justify-content: space-between;
             width: 100%;
             margin-top: 20px;
+            position: relative;
         }
 
         #slideshow-controls button {
-            background: none;
-            border: none;
+            background-color: transparent;
+            border: 2px solid #000; /* Black border */
             font-size: 30px; /* Increased button size */
             cursor: pointer;
             color: #333;
             padding: 10px;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #slideshow-controls #back {
+            left: 0;
+        }
+
+        #slideshow-controls #forward {
+            right: 0;
         }
 
         #slideshow-controls button:hover {
             color: #000;
+        }
+
+        #slideshow-controls button:focus {
+            outline: none; /* Remove focus outline */
         }
     </style>
 </head>
