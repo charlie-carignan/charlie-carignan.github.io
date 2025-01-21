@@ -28,6 +28,9 @@ categories: media
             height: 600px; /* Increased height */
             overflow: hidden;
             background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .slide {
@@ -56,21 +59,15 @@ categories: media
         }
 
         .caption-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 15px;
+            margin-top: 10px;
             font-size: 18px; /* Increased font size */
             color: #333;
-        }
-
-        .caption {
             text-align: center;
         }
 
         #slideshow-controls {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             width: 100%;
             margin-top: 20px;
         }
@@ -84,6 +81,7 @@ categories: media
             padding: 10px;
             display: inline-block;
             transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+            margin: 0 20px; /* Space between buttons */
         }
 
         #slideshow-controls button:hover {
@@ -94,17 +92,6 @@ categories: media
         #slideshow-controls button:focus {
             outline: none; /* Remove focus outline */
         }
-
-        /* Additional positioning for the buttons */
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        #back {
-            order: -1; /* Places the back button to the left of the caption */
-        }
     </style>
 </head>
 <body>
@@ -112,11 +99,11 @@ categories: media
         <div id="slideshow">
             <!-- Slides dynamically generated -->
         </div>
-        <div id="slideshow-controls" class="button-container">
+        <div class="caption-container">
+            <span id="caption"></span> <!-- Caption displayed here -->
+        </div>
+        <div id="slideshow-controls">
             <button id="back" aria-label="Previous slide">←</button>
-            <div class="caption-container">
-                <span id="caption" class="caption"></span> <!-- Caption displayed here -->
-            </div>
             <button id="forward" aria-label="Next slide">→</button>
         </div>
     </div>
