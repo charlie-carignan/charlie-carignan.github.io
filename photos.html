@@ -4,6 +4,8 @@ layout: default
 categories: media
 ---
 
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +13,17 @@ categories: media
     <style>
         body {
             margin: 0;
-            background-color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
+            background-color: #000;
         }
         #slideshow {
             position: relative;
             width: 80%;
             height: 80%;
+            overflow: hidden;
         }
         .slide {
             position: absolute;
@@ -44,54 +46,57 @@ categories: media
 </head>
 <body>
     <div id="slideshow">
-        <!-- Slides will be added dynamically -->
+        <!-- Slides dynamically generated -->
     </div>
 
     <script>
-        // Array of media (images and videos)
+        // Media array
         const media = [
-            { type: "image", src: "/assets/UICgreenhouse.JPG", title: "UIC greenhouse" alt: "UIC greenhouse"},
-            { type: "image", src: "/assets/lilyPad.JPG", title: "Lily pads at Humboldt Park" alt: "Lily pads at Humboldt Park"},
+            { type: "image", src: "/assets/UICgreenhouse.JPG", title: "UIC greenhouse" },
+            { type: "image", src: "/assets/lilyPad.JPG", title: "Lily pads at Humboldt Park" },
+            { type: "image", src: "/assets/mangos.JPG", title: "Mangos!" },
+            { type: "image", src: "/assets/LMsunset.JPG", title: "Lake Michigan sunset" },
+            { type: "image", src: "/assets/LMsand.JPG", title: "Sand Ripples" },
             { type: "video", src: "/assets/LMROV.mov", title: "Underwater ROV on Lake Michigan bottom" },
-            { type: "image", src: "/assets/mangos.JPG", title: "Mangos!", alt: "Mangos!" },
-            { type: "video", src: "/assets/ZMsiphons.MOV", title: "Zebra Mussel siphons" },
-	    { type: "image", src: "/assets/LMsunset.JPG", title: "Lake Michigan sunset" alt: "Lake Michigan sunset"},
-	    { type: "image", src: "/assets/LMsand.JPG", title: "Sand ripples" alt: "Sand ripples"},
-	    { type: "image", src: "/assets/turksCapLily.JPG, title: "Turk's-cap Lily" alt: "Turk's-cap Lily"},
-	    { type: "image", src: "/assets/bighorn.JPG" , title: "Bighorn sheep at Badlands NP" alt: "Bighorn sheep at Badlands NP"},
-	    { type: "video", src: "/assets/yellowPerch.MOV", title: "Yellow Perch" },
-	    { type: "image", src: "/assets/asterNE.JPG" , title: "New England aster" alt: "New England aster"},
-	    { type: "image", src: "/assets/frog.JPG" , title: "Northern leopard frog" alt: "Northern leopard frog"},
-            { type: "image", src: "/assets/milkweedBugs.JPG" , title: "Milkweed bugs" alt: "Milkweed bugs"},
-	    { type: "image", src: "/assets/otoliths_Mbuna.jpg" , title: "Mbuna otoliths from Lake Malawi" alt: "Mbuna otoliths from Lake Malawi"},
-            { type: "image", src: "/assets/pPConeflower.JPG" , title: "Pale purple coneflower" alt: "Pale purple coneflower"},
-	    { type: "image", src: "/assets/turkeyTail.JPG" , title: "Turkey tail mushrooms" alt: "Turkey tail mushrooms"},
- 	    { type: "image", src: "/assets/AGcrystals.JPG" , title: "Silver crystals" alt: "Silver crystals"},
- 	    { type: "image", src: "/assets/milkweed.JPG" , title: "Milkweed plant" alt: "Milkweed plant"},
- 	    { type: "image", src: "/assets/barredOwl.JPG" , title: "Barred owl" alt: "Barred owl"},
-	    { type: "image", src: "/assets/sandhillCrane.JPG" , title: "Sandhill cranes" alt: "Sandhill cranes"},
-	    { type: "video", src: "/assets/boat.MOV", title: "Heading out to field work" },
-	    { type: "image", src: "/assets/AMbullfrog.JPG" , title: "American bullfrog" alt: "American bullfrog"},
-            { type: "image", src: "/assets/chicken_of_woods.JPG" , title: "Chicken of the Woods mushrooms" alt: "Chicken of the Woods mushrooms"},
-	    { type: "video", src: "/assets/mkeRiverSnapper.mov", title: "Milwaukee River Snapping Turtle" },
+            { type: "image", src: "/assets/turksCapLily.JPG", title: "Turk's-cap Lily" },
+            { type: "image", src: "/assets/bighorn.JPG", title: "Bighorn sheep at Badlands NP" },
+            { type: "video", src: "/assets/yellowPerch.MOV", title: "Yellow Perch" },
+            { type: "image", src: "/assets/asterNE.JPG", title: "New England aster" },
+            { type: "image", src: "/assets/frog.JPG", title: "Northern leopard frog" },
+            { type: "image", src: "/assets/milkweedBugs.JPG", title: "Milkweed bugs" },
+            { type: "image", src: "/assets/otoliths_Mbuna.jpg", title: "Mbuna otoliths" },
+            { type: "image", src: "/assets/pPConeflower.JPG", title: "Pale purple coneflower" },
+            { type: "image", src: "/assets/turkeyTail.JPG", title: "Turkey tail mushrooms" },
+            { type: "image", src: "/assets/AGcrystals.JPG", title: "Silver crystals" },
+            { type: "image", src: "/assets/milkweed.JPG", title: "Milkweed plant" },
+            { type: "video", src: "/assets/ZMsiphons.MOV", title: "Zebra mussels" },
+            { type: "image", src: "/assets/barredOwl.JPG", title: "Barred owl" },
+            { type: "image", src: "/assets/sandhillCrane.JPG", title: "Sandhill cranes" },
+            { type: "video", src: "/assets/boat.MOV", title: "Heading out to field work" },
+            { type: "image", src: "/assets/AMbullfrog.JPG", title: "American bullfrog" },
+            { type: "image", src: "/assets/chicken_of_woods.JPG", title: "Chicken of the Woods mushrooms" },
+            { type: "video", src: "/assets/mkeRiverSnapper.mov", title: "Milwaukee River Snapping Turtle" }
         ];
 
         const slideshow = document.getElementById("slideshow");
 
         // Create slides
-        media.forEach((item, index) => {
+        media.forEach((item) => {
             const slide = document.createElement("div");
-            slide.className = "slide";
+            slide.classList.add("slide");
 
             if (item.type === "image") {
                 const img = document.createElement("img");
                 img.src = item.src;
+                img.alt = item.title;
+                img.title = item.title;
                 slide.appendChild(img);
             } else if (item.type === "video") {
                 const video = document.createElement("video");
                 video.src = item.src;
-                video.loop = true;
+                video.title = item.title;
                 video.muted = true;
+                video.loop = true;
                 video.autoplay = true;
                 slide.appendChild(video);
             }
@@ -100,8 +105,8 @@ categories: media
         });
 
         // Slideshow logic
-        let currentIndex = 0;
         const slides = document.querySelectorAll(".slide");
+        let currentIndex = 0;
 
         function showSlide(index) {
             slides.forEach((slide, i) => {
@@ -114,11 +119,9 @@ categories: media
             showSlide(currentIndex);
         }
 
-        // Initial display
+        // Start the slideshow
         showSlide(currentIndex);
-
-        // Slide interval (5 seconds per slide)
-        setInterval(nextSlide, 5000);
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
     </script>
 </body>
 </html>
