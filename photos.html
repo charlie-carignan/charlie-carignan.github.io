@@ -116,7 +116,7 @@ categories: media
             { type: "image", src: "/assets/lilyPad.JPG", title: "Lily pads at Humboldt Park" },
             { type: "image", src: "/assets/mangos.JPG", title: "Mangos!" },
             { type: "image", src: "/assets/LMsunset.JPG", title: "Lake Michigan sunset" },
-            { type: "image", src: "/assets/schlumbergeraTruncata.jpg", title: "Schlumbergera truncata" },
+            { type: "image", src: "/assets/schlumbergeraTruncata.jpg", title: "<i>Schlumbergera truncata</i>" },
             { type: "image", src: "/assets/LMsand.JPG", title: "Sand ripples" },
             { type: "video", src: "/assets/LMROV.mov", title: "Underwater ROV on Lake Michigan bottom" },
             { type: "image", src: "/assets/turksCapLily.JPG", title: "Turk's-cap lily" },
@@ -152,13 +152,11 @@ categories: media
             if (item.type === "image") {
                 const img = document.createElement("img");
                 img.src = item.src;
-                img.alt = item.title;
-                img.title = item.title;  // Tooltip text removed for images
+                img.alt = item.title.replace(/<[^>]*>/g, ""); // Remove HTML tags for alt attribute
                 slide.appendChild(img);
             } else if (item.type === "video") {
                 const video = document.createElement("video");
                 video.src = item.src;
-                video.title = item.title; // Tooltip text removed for videos
                 video.muted = true;
                 video.loop = true;
                 video.autoplay = true;
@@ -177,7 +175,7 @@ categories: media
                 slide.classList.toggle("active", i === index);
             });
             // Update caption for current slide
-            captionElement.textContent = media[index].title;
+            captionElement.innerHTML = media[index].title;
         }
 
         function nextSlide() {
