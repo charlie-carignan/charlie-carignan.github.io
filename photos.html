@@ -18,14 +18,14 @@ categories: media
             justify-content: center;
             align-items: center;
             width: 100%;
-            max-width: 1000px; /* Increased max width */
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         #slideshow {
             position: relative;
             width: 100%;
-            height: 750px; /* Increased height */
+            height: 600px;
             overflow: hidden;
             background: transparent;
         }
@@ -49,39 +49,40 @@ categories: media
         }
 
         img, video {
-            max-width: 90%; /* Increased max width */
-            max-height: 90%; /* Increased max height */
+            max-width: 90%;
+            max-height: 90%;
             object-fit: contain;
         }
 
         .caption {
             margin-top: 15px;
-            font-size: 18px; /* Increased font size */
+            font-size: 18px;
             color: #333;
             text-align: center;
         }
 
         #slideshow-controls {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             width: 100%;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         #slideshow-controls button {
             background-color: #003366; /* Dark blue background */
             border: 2px solid #003366; /* Dark blue border */
-            font-size: 30px; /* Increased button size */
-            color: white; /* White text */
+            font-size: 30px;
+            color: white;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s, color 0.3s; /* Smooth color change on hover */
+            transition: background-color 0.3s, color 0.3s;
+            margin: 0 10px; /* Add margin to space out buttons */
         }
 
         #slideshow-controls button:hover {
             background-color: #002244; /* Darker blue on hover */
-            color: #f1f1f1; /* Lighter text color on hover */
+            color: #f1f1f1;
         }
 
         #slideshow-controls button:focus {
@@ -103,7 +104,7 @@ categories: media
     <script>
         // Media array
         const media = [
-            { type: "image", src: "/assets/UICgreenhouse.JPG", title: "UIC greenhouse" },
+           { type: "image", src: "/assets/UICgreenhouse.JPG", title: "UIC greenhouse" },
             { type: "image", src: "/assets/lilyPad.JPG", title: "Lily pads at Humboldt Park" },
             { type: "image", src: "/assets/mangos.JPG", title: "Mangos!" },
             { type: "image", src: "/assets/LMsunset.JPG", title: "Lake Michigan sunset" },
