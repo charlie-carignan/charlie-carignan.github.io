@@ -38,6 +38,10 @@ categories: media
             height: 100%;
             opacity: 0;
             transition: opacity 1s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .slide.active {
@@ -45,9 +49,16 @@ categories: media
         }
 
         img, video {
-            width: 100%;
-            height: 100%;
+            max-width: 100%;
+            max-height: 80%;
             object-fit: contain;
+        }
+
+        .caption {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+            text-align: center;
         }
 
         #slideshow-controls {
@@ -133,6 +144,12 @@ categories: media
                 video.autoplay = true;
                 slide.appendChild(video);
             }
+
+            // Add caption
+            const caption = document.createElement("div");
+            caption.classList.add("caption");
+            caption.textContent = item.title;
+            slide.appendChild(caption);
 
             slideshow.appendChild(slide);
         });
