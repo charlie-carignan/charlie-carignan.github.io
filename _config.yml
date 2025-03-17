@@ -21,11 +21,25 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {file: "photos.html", title: Photos}
   - {file: "index2.html", title: Contact }
 
+external:
+  - title: Github
+    icon: github
+    url: "https://github.com/charlie-carignan"
+    target: "_blank"
 
-external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Github, icon: github, url: "https://github.com/charlie-carignan", target: "_blank"}
-  - {title: Instagram, icon: "instagram", url: "https://www.instagram.com/charlie_carignan/", target: "_blank"}
-  - {title: Facebook, icon: "facebook", url: "https://www.facebook.com/charlie.carignan", target: "_blank"}
+  - title: Instagram
+    icon: instagram
+    url: "https://www.instagram.com/charlie_carignan/"
+    target: "_blank"
+
+  - title: Facebook
+    icon: facebook
+    url: "https://www.facebook.com/charlie.carignan"
+    target: "_blank"
+#external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
+  #- {title: Github, icon: github, url: "https://github.com/charlie-carignan", target: "_blank"}
+  #- {title: Instagram, icon: "instagram", url: "https://www.instagram.com/charlie_carignan/", target: "_blank"}
+  #- {title: Facebook, icon: "facebook", url: "https://www.facebook.com/charlie.carignan", target: "_blank"}
 
 
 comments:
