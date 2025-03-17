@@ -38,6 +38,11 @@
 <footer>
   <div>{{ site.description | default: site.title }}</div>
   {% include menu.html menu=site.external %}
+  {% for item in include.menu %}
+  <a href="{{ item.url }}" target="{{ item.target | default: '_blank' }}" rel="noopener noreferrer">
+    <i class="fa fa-{{ item.icon }}"></i> {{ item.title }}
+  </a>
+{% endfor %}
 </footer>
 {% endif %}
 
