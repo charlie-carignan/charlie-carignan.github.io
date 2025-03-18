@@ -39,9 +39,9 @@
   <div>{{ site.description | default: site.title }}</div>
   {% for item in site.external %}
     <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
-      <i class="fa fa-{{ item.icon }}"></i>
+    <i class="fa fa-{{ item.icon }}"></i>  {{ item.title }}
     </a>
-{% endfor %}
+  {% endfor %}
 </footer>
 {% endif %}
   
