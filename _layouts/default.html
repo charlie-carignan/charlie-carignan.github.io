@@ -37,13 +37,12 @@
 {% if site.external %}
 <footer>
   <div>{{ site.description | default: site.title }}</div>
-  {% include menu.html menu=site.external %}
- {% for item in site.external %}
-<a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
-  <i class="fa fa-{{ item.icon }}"></i> {{ item.title }}
-</a>
-{% endfor %}
+  {% for item in site.external %}
+    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-{{ item.icon }}"></i> {{ item.title }}
+    </a>
+  {% endfor %}
 </footer>
 {% endif %}
-
+  
 </html>
